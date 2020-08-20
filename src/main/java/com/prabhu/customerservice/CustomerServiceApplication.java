@@ -29,6 +29,7 @@ public class CustomerServiceApplication implements CommandLineRunner {
 	@Bean
 	public ModelMapper getMapper(){
 		ModelMapper mapper = new ModelMapper();
+		//Hellomama
 
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		return mapper;
@@ -36,6 +37,8 @@ public class CustomerServiceApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
+
 		String str = UUID.randomUUID().toString();
 		customerDao.save(new Customer(str+1, str+2, str+3, 1000)) ;
 		customerDao.save(new Customer(str+6, str+5, str+4, 1000)) ;

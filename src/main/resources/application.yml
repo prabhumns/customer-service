@@ -1,14 +1,18 @@
 server:
   port: 8081
 spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
   application:
     name: CUSTOMER-WS
   datasource:
-    password: Fill this later
-    url: Fill this later
-    username: Fill this later
+    url:
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.SQLiteDialect
+        ddl-auto: update
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
 

@@ -5,6 +5,8 @@ spring:
     console:
       enabled: true
       path: /h2
+      settings:
+        web-allow-others: true
   application:
     name: CUSTOMER-WS
   datasource:
@@ -17,8 +19,3 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-logging:
-  level:
-    org:
-      hibernate: debug
-

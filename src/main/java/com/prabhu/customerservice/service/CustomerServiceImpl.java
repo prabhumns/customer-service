@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  */
 
 @Service
+@Transactional
 public class CustomerServiceImpl implements CustomerService{
 
     private CustomerRepo repo;
@@ -32,6 +34,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
+
     public Iterable<CustomerResponse> getAllCustomer() {
         Iterable<Customer> customers = repo.findAll();
         return this.mapper.map(customers, listType);
@@ -55,6 +58,5 @@ public class CustomerServiceImpl implements CustomerService{
     public void saveCustomer(CustomerRequest customerRequest) {
         Customer customer = this.mapper.map(customerRequest, Customer.class);
         repo.save(customer);
-        System.out.println(customer);
     }
 }

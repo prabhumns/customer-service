@@ -8,11 +8,17 @@ spring:
   application:
     name: CUSTOMER-WS
   datasource:
-    url:
+    url: jdbc:postgresql://localhost:5432/customer-service
+    password: postgres
+    username: postgres
   jpa:
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
-        ddl-auto: update
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
+logging:
+  level:
+    org:
+      hibernate: debug
 

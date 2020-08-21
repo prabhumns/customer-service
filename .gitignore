@@ -34,3 +34,6 @@ build/
 /hs_err_pid1412.log
 **/*.*~
 .gitignore
+hs_err_pid16092.log
+replay_pid16092.log
+hs_err_pid904.log
